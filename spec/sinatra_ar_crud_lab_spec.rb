@@ -90,7 +90,7 @@ describe "Magazine App" do
     it "saves edits to an article" do
       visit "/articles/#{@article2.id}/edit"
       fill_in :'article[title]', :with => "Second Article!!"
-      fill_in :content, :with => "this is the best article ever written"
+      fill_in :'article[content]', :with => "this is the best article ever written"
 
       page.find(:css, "[type=submit]").click
       expect(Article.all.count).to eq(2)
