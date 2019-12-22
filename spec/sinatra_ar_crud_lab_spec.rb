@@ -99,7 +99,7 @@ describe "Magazine App" do
 
     it "redirects to '/articles/:id'" do
       visit "/articles/#{@article2.id}/edit"
-      fill_in :content, :with => "this is even better than the last"
+      fill_in :'article[content]', :with => "this is even better than the last"
 
       page.find(:css, "[type=submit]").click
       expect(page.current_path).to eq("/articles/#{@article2.id}")
